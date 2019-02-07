@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::group(['middleware'=>['auth']], function(){
 	Route::prefix('admin')->group(function(){
 	Route::get('/', function(){
@@ -23,6 +24,13 @@ Route::group(['middleware'=>['auth']], function(){
 });
 });
 
+=======
+Route::prefix('admin')->group(function(){
+	Route::get('/', function(){
+		return view('admin.main');
+		})->name('admin.home');
+});
+>>>>>>> 82870278d1d2a26ad94030ca566ad9cb32e94a99
 
 Auth::routes();
 
