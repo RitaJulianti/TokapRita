@@ -24,6 +24,7 @@ Route::group(['middleware'=>['auth']], function(){
 		Route::prefix('user')->group(function(){
 			
 			Route::get('/','UserController@daftar')->name('admin.user')->middleware('akses.admin');
+			Route::delete('/','UserController@delete')->middleware('akses.admin');
 
 			Route::get('/edit/{id}','UserController@edit')->name('admin.user.edit')
 					->middleware('akses.admin');
